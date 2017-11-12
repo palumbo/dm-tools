@@ -1,0 +1,44 @@
+body { 
+	font-family: sans-serif; 
+}
+
+
+/* SPELLS
+----------------------*/
+
+h1, h2, h3 { 
+	font-family: 'Eagle Lake', cursive;
+}
+
+a:link {
+	color: black; 
+	text-decoration: none; 
+}
+
+a:hover {
+	color: grey; 
+	text-decoration: underline; 
+	
+}
+
+
+
+table, th, td, tr .spells-table { 
+	border: 1px solid black; 
+	border-collapse: collapse; 
+}
+
+
+th, td, tr .spells-table { 
+	padding: 5px; 
+}
+
+th, .spells-table { 
+	text-align: left; 
+}
+
+.spell-title { 
+	color: red; 
+}
+
+.spell-description {}
