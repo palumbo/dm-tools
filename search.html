@@ -5,54 +5,38 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
-				$.getJSON('spells.json', function(data){
-					console.log(data); 
-					var output = "<ul class='searchresults'>";
-					$.each(data, function(key, val) {
-						console.log(key, val.description); 
-						output += "<li>"; 
-						output += "<h2>" + key + "</h2>"; 
-						output += "<p>" + val.description + "</p>"; 
-						output += "</li>"; 
-					}) // each
-					output += "</ul>"; 
-					$("#update").html(output); 
-				}) // getJSON
-			})
+				$("#search").keyup(function(){
+					var searchField = $("#search").val(); 
+					var myExp = new RegExp(searchField, "i"); 
+					$.getJSON('spells.json', function(data){
+						console.log(data); 
+						var output = ""; // initializes output variable 					
+						$.each(data, function(key, val) {
+							// console.log(key, val.description); 
+							if ((key.search(myExp) != -1) || (val.description.search(myExp) != -1)) {
+								output += "<h1>" + key + "</h1>";  
+								output +="<table class='spells-table searchresults'>";
+								output += "<tr><th scope='row'>Casting Time</th><td>" + val.casting_time + "</td></tr>";
+								output += "<tr><th scope='row'>Range</th><td>" + val.range + "</td></tr>"; 
+								output += "<tr><th scope='row'>Components</th><td>" + val.components + "</td></tr>"; 
+								output += "<tr><th scope='row'>Duration</th><td>" + val.duration + "</td></tr>"; 
+								output += "</table>";
+								output += "<p class='spell-description'>" + val.description + "</p>"; 
+							}
+						}) // each
+						$("#update").html(output); 
+					}) // getJSON				
+				}) // keyup
+			}) // document.ready
 		</script>
 	</head>
 	<body>
+		<div id='searcharea'>
+			<label for="search">Spell Search</label>
+			<p>Enter the name or info about a spell</p>
+			<input type="search" name='search' id="search" placeholder="name or info" /> 
+		</div>
 		<div id="update"></div>
 	</body>
 </html>
 
-<!-- NOTES
-	
-	key == spell name 
-$.getJSON('spells.json', function(data){
-	console.log(data); 
-})
-
-
-
-
-
-$("#search").keyup(function() {
-	var searchField = $( "#search" ).val(); 
-	var myExp = new RegExp(searchField, "i"); 
-	$.getJSON('data.json', function(data){
-		var output = "<ul class='searchresults'>"; 
-		$.each(data, function(key, val) {
-			if ((val.name.search(myExp) != -1) || (val.bio.search(myExp) != -1)) {
-				output += "<li>"; 
-				output += "<h2>" + val.name + "</h2>"; 
-				output += "<img src='images/" + val.shortname + "_tn.jpg' alt = '" + val.name + "' />"; 
-				output += "<p>" + val.bio + "</p>"; 
-				output += "</li>"; 
-			}
-		}); 
-		output += "</ul>"; 
-		$("#update").html(output); 
-	}); //get JSON	
-});
--->
