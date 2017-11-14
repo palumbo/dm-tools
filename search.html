@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html lang=“en”>
+	<head>
+		<title>Search</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$.getJSON('spells.json', function(data){
+					console.log(data); 
+					var output = "<ul class='searchresults'>";
+					$.each(data, function(key, val) {
+						console.log(key, val.description); 
+						output += "<li>"; 
+						output += "<h2>" + key + "</h2>"; 
+						output += "<p>" + val.description + "</p>"; 
+						output += "</li>"; 
+					}) // each
+					output += "</ul>"; 
+					$("#update").html(output); 
+				}) // getJSON
+			})
+		</script>
+	</head>
+	<body>
+		<div id="update"></div>
+	</body>
+</html>
+
+<!-- NOTES
+	
+	key == spell name 
+$.getJSON('spells.json', function(data){
+	console.log(data); 
+})
+
+
+
+
+
+$("#search").keyup(function() {
+	var searchField = $( "#search" ).val(); 
+	var myExp = new RegExp(searchField, "i"); 
+	$.getJSON('data.json', function(data){
+		var output = "<ul class='searchresults'>"; 
+		$.each(data, function(key, val) {
+			if ((val.name.search(myExp) != -1) || (val.bio.search(myExp) != -1)) {
+				output += "<li>"; 
+				output += "<h2>" + val.name + "</h2>"; 
+				output += "<img src='images/" + val.shortname + "_tn.jpg' alt = '" + val.name + "' />"; 
+				output += "<p>" + val.bio + "</p>"; 
+				output += "</li>"; 
+			}
+		}); 
+		output += "</ul>"; 
+		$("#update").html(output); 
+	}); //get JSON	
+});
+-->
