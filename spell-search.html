@@ -1,14 +1,15 @@
 <!DOCTYPE html> 
 <html lang=“en”>
 	<head>
-		<title>Search</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<title>Spell Search</title>
+		<link rel="stylesheet" href="_css/main.css"> 
 		<script>
+/*
 			$(document).ready(function(){
 				$("#search").keyup(function(){
 					var searchField = $("#search").val(); 
 					var myExp = new RegExp(searchField, "i"); 
-					$.getJSON('spells.json', function(data){
+					$.getJSON('_json/spells.json', function(data){
 						console.log(data); 
 						var output = ""; // initializes output variable 					
 						$.each(data, function(key, val) {
@@ -28,6 +29,7 @@
 					}) // getJSON				
 				}) // keyup
 			}) // document.ready
+*/
 		</script>
 	</head>
 	<body>
@@ -37,6 +39,8 @@
 			<input type="search" name='search' id="search" placeholder="name or info" /> 
 		</div>
 		<div id="update"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="_js/spell-search.js"></script>
 	</body>
 </html>
 
