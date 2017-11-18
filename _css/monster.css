@@ -1,0 +1,22 @@
+body {
+	font-family: sans-serif; 
+}
+
+.bold { 
+	font-weight: bold;   
+}
+
+.stats {
+	padding: 20px; 
+}
+
+table {
+	border: 1px solid black; 
+	border-collapse: collapse; 
+}
+
+th, td {
+	border: 1px solid black; 
+	text-align: left; 
+}
+
