@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
 	function lootGenerator(){
-		var q = Math.floor((Math.random() * 10) + 1); 
-		var t = Math.floor((Math.random() * 100) + 1); 
+		var q = Math.floor((Math.random() * 10) + 1); // quantity
+		var t = Math.floor((Math.random() * 100) + 1); // type
 		
 		if (t > 95 && t <= 100) { 
 			t = 'gold'; 
