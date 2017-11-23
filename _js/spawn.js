@@ -11,7 +11,7 @@ $(document).ready(function(){
 		for (var i = 1; i <= num; i++) {
 			$("#battleground").append("<input type='text' size='30' placeholder='" + mon + " Name/Location'>");
 			$("#battleground").append("<input type='number' value='" + hp + "' class='dmg'>"); 
-			$("#battleground").append("<span class='xp" + mon + i + "'></span>"); 
+			$("#battleground").append("<span class='monsterxp'></span><span class='loot'></span>"); 
 			$("#battleground").append("<br>"); 
 		} // for loop
 		
@@ -27,8 +27,14 @@ $(document).ready(function(){
 				$(this).css("background-color", "white"); 	
 				$(this).next().text(""); 			
 			}
+		}) //select.dmg	
 
-		}) //select.dmg
-	
 	}) //select.change
+
 }); // document.ready
+
+
+function loot(){
+	var loot = Math.floor((Math.random() * 10) + 1); 
+	return loot; 
+}

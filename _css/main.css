@@ -2,6 +2,11 @@ body {
 	font-family: sans-serif; 
 }
 
+.emphasis { 
+	font-variant: small-caps; 
+	font-weight: bold; 
+}
+
 
 /* SPELLS
 ----------------------*/
@@ -42,3 +47,16 @@ th, .spells-table {
 }
 
 .spell-description {}
+
+
+
+/* MONSTER GENERATOR
+---------------------*/
+	
+.monsterxp {
+	padding-left: 8px; 
+}
+
+.img-ctn {
+	float: right; 
+}

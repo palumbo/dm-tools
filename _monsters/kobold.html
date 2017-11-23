@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Goblin</title>
+    <title>Kobold</title>
+    <!-- style sheets --> 
     <link rel="stylesheet" href="../_css/main.css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Goblin</h1>
+    <h1>Kobold</h1>
     <div class="img-ctn">
-        <img src="../_images/goblin.jpg">
+        <img src="../_images/kobold.jpg">
     </div>
     
     <div class="monster">
         <div class="monster-heading">
             <hr> 
-            <h3><span id='monster-name'>Goblin</span></h3>
-            <h5>Small humanoid (goblinoid), neutral evil</h5>
+            <h3><span id='monster-name'>Kobold</span></h3>
+            <h5>Small humanoid (kobold), lawful evil</h5>
         </div>
 
         <table>
             <tr>
                 <th scope="row">Armor Class</th>
-                <td>15 (leather armor, shield)</td>
+                <td>12 (leather armor, shield)</td>
             </tr>
 
             <tr>
                 <th scope="row">Hit Points</th>
-                <td><span id="hp">7</span (2d6)></td>
+                <td><span id="hp">5</span (2d6)></td>
             </tr>
 
             <tr>
@@ -40,59 +41,63 @@
         
         <br>
 
+		<!-- ABILITIES --> 
         <table class="abilities">
             <tr>
                 <th scope="col">STR</th>
-                <tH scope="col">CON</tH>
+                <th scope="col">DEX</th>
+                <th scope="col">CON</tH>
                 <th scope="col">INT</th>
                 <th scope="col">WIS</th>
                 <th scope="col">CHA</th>
             </tr>
             <tr>
-                <td>8 (-1)</td>
-                <td>14 (+2)</td>
-                <td>10 (+0_</td>
-                <td>10 (+0)</td>
-                <td>8 (-1)</td>
-                <td>8 (-1)</td>
+                <td id="str">7 (-2)</td>
+                <td id="dex">15 (+2)</td>
+                <td id="con">9 (-1)</td>
+                <td id="int">8 (-1)</td>
+                <td id="wis">7 (-2)</td>
+                <td id="cha">8 (-1)</td>
             </tr>
         </table>
 
         <br>
 
+		<!-- MONSTER SKILLS --> 
         <table class="info">
             <tr>
-                <th scope="row">Skills</th>
-                <td>Stealth +6</td>
-            </tr>
-
-            <tr>
                 <th scope="row">Senses</th>
-                <td>darkvision 60 ft., passive Perception 9</td>
+                <td>darkvision 60 ft., passive Perception 8</td>
             </tr>
 
             <tr>
-                <th scope="row">Language</th>
-                <td>Common, Goblin</td>
+                <th scope="row">Languages</th>
+                <td>Common, Draconic</td>
             </tr>
 
             <tr>
                 <th scope="row">Challenge</th>
-                <td id="xp">1/4 (50 xp)</td>
+                <td id="xp">1/8 (25 xp)</td>
             </tr>
         </table>
-        <p><b><i>Nimble Escape.</i></b> The goblin can take the <a href="../combat.html#disengage">Disengage</a>  or <a href="../combat.html#hide">Hide</a> action as a bonus action on each of its turns.</p>
+        
+		<p><span class="emphasis">Sunlight Sensitivity.</span> While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</p>
+		
+		<p><span class="emphasis">Pack Tactics.</span> The kobold has advantage on an attack roll against a creature if at least one of the kobold's allies is within 5 feet of the create and the ally isn't incapacitated.</p>
+        
+        
+        <!-- ACTIONS AND WEAPONS --> 
         <h3>Actions</h3>
-            <p><b><i>Scimitar.</i></b>
+            <p><span class="emphasis">Dagger.</span> 
                 <ul>
                     <li>Melee Weapon Attack: +4 to hit, reach 5 ft, one target</li>
-                    <li>Hit: 5 (1d6 + 2) slashing damage</li>
+                    <li>Hit: 4 (1d4 + 2) piercing damage</li>
                 </ul>
             </p>
-            <p><b><i>Shortbow</i></b>
+            <p><span class="emphasis">Sling</span>
                 <ul>
-                    <li>Ranged Weapon Attack: +4 to hit, range 80/320 ft, one target</li>
-                    <li>Hit: 5 (1d6 + 2) slashing damage</li>
+                    <li>Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target</li>
+                    <li>Hit: 4 (1d4 + 2) bludgeoning damage</li>
                 </ul>
             </p>
             <p>Goblins are black-hearted, gather in overwhelming numbers, and crave power, which they abuse.</p>
