@@ -1,4 +1,20 @@
 $(document).ready(function(){
+
+	function lootGenerator(){
+		var q = Math.floor((Math.random() * 10) + 1); 
+		var t = Math.floor((Math.random() * 100) + 1); 
+		
+		if (t > 95 && t <= 100) { 
+			t = 'gold'; 
+		} else if (t > 60 && t <= 94) { 
+			t = 'silver'; 
+		} else { 
+			t = 'copper'; 
+		}
+		
+		var loot = q + " " + t; 
+		return loot; 
+	}
 	
 	// listens for select change 
 	$("select").change(function(){
@@ -22,7 +38,7 @@ $(document).ready(function(){
 		$(".dmg").change(function(){
 			if ($(this).val() <= 0){ 
 				$(this).css("background-color", "red"); 
-				$(this).next().text(xp); 
+				$(this).next().text(xp).next().text(lootGenerator()); 
 			} else { 
 				$(this).css("background-color", "white"); 	
 				$(this).next().text(""); 			
